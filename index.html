@@ -9,11 +9,14 @@
 <body>
     <div class="container">
         <h1>🚀 Pump.fun Top 100 Tokens</h1>
-        <button id="btn-5m">5 Min</button>
-        <button id="btn-1h">1 Hour</button>
-        <button id="btn-6h">6 Hours</button>
-        <button id="btn-24h">24 Hours</button>
-        <div id="token-list"></div>
+        <div class="button-group">
+            <button id="btn-5m">5 Min</button>
+            <button id="btn-1h">1 Hour</button>
+            <button id="btn-6h">6 Hours</button>
+            <button id="btn-24h">24 Hours</button>
+        </div>
+        <div id="loading" class="loading">Loading...</div>
+        <div id="token-list" class="token-list"></div>
     </div>
     <script src="script.js"></script>
 </body>

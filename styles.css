@@ -2,42 +2,139 @@ body {
     background-color: #1a1a2e;
     color: #fff;
     font-family: Arial, sans-serif;
-    text-align: center;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
 }
 
 .container {
     max-width: 800px;
-    margin: 0 auto;
+    width: 100%;
     padding: 20px;
+    box-sizing: border-box;
 }
 
 h1 {
     margin-bottom: 20px;
+    color: #00bcd4;
+    text-align: center;
+}
+
+.button-group {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+button {
+    padding: 10px 20px;
+    margin: 5px;
+    border: none;
+    border-radius: 5px;
+    background-color: #00bcd4;
+    color: #fff;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0097a7;
+}
+
+.loading {
+    text-align: center;
+    font-size: 18px;
+    color: #00bcd4;
+    display: none;
+}
+
+.token-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
 
 .token {
     background-color: #16213e;
-    margin: 10px 0;
     padding: 15px;
     border-radius: 8px;
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 70px 1fr auto; /* Logo | Info | Price */
+    gap: 15px;
     align-items: center;
 }
 
-.token img {
+.token-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+
+.token-logo {
     width: 50px;
     height: 50px;
     border-radius: 50%;
 }
 
+.token-links {
+    display: flex;
+    gap: 5px;
+}
+
+.token-links a {
+    color: #00bcd4;
+    text-decoration: none;
+    font-size: 12px;
+}
+
+.token-links a:hover {
+    text-decoration: underline;
+}
+
 .token-info {
-    flex-grow: 1;
-    text-align: left;
-    margin-left: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.token-info strong {
+    font-size: 1.1em;
+    color: #00bcd4;
 }
 
 .token-price {
-    font-size: 1.2em;
-    color: #4caf50;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 5px;
+    font-size: 1em;
+    text-align: right;
+}
+
+.token-price .volume {
+    color: #4caf50; /* Green for volume */
+}
+
+.token-price .price-change {
+    color: #ff5252; /* Red for negative price change */
+}
+
+.token-price .price-change.positive {
+    color: #4caf50; /* Green for positive price change */
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .token {
+        grid-template-columns: 1fr; /* Stack elements vertically on small screens */
+        gap: 10px;
+    }
+
+    .token-price {
+        align-items: flex-start; /* Align price info to the left on small screens */
+    }
 }
